@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "Chicken Biryani",
+    "price": "Rs.250",
+    "quantity": "1 kg",
+    "category": "Non veg",
+    "like": "Best",
+    "image": "https://img.freepik.com/free-photo/close-up-appetizing-ramadan-meal_23-2151182540.jpg?t=st=1715256509~exp=1715260109~hmac=6bb464083aba15cfbf2d85a1da6b104ff90823423803c0ec4c33304384c3e28a&w=740"
+  },
+  {
+    "id": 2,
+    "name": "Momos",
+    "price": "Rs.50",
+    "quantity": "Full Plate",
+    "category": "Fast food",
+    "like": "Best",
+    "image": "https://img.freepik.com/free-photo/view-delicious-dumplings_23-2150777769.jpg?t=st=1715840588~exp=1715844188~hmac=0c59bda5e1bf0617b228a6f8618cf18b198fb6968e9bc72779935a157e19308f&w=740"
+  },
+  {
+    "id": 3,
+    "name": "Veg Chowmein",
+    "price": "Rs.60",
+    "quantity": "Full Plate",
+    "category": "Fast food",
+    "like": "Best",
+    "image": "https://img.freepik.com/free-photo/top-view-delicious-noodles-concept_23-2148773775.jpg?t=st=1715840503~exp=1715844103~hmac=5e7cedea1ada40dd4e143fd808c1434601a5cd1ff526b1ec7e943601b7ba260c&w=740"
+  },
+  {
+    "id": 4,
+    "name": "Softy Ice Cream",
+    "price": "Rs.60",
+    "quantity": "per piece",
+    "category": "Desert",
+    "like": "Best",
+    "image": "https://img.freepik.com/free-photo/top-view-set-ice-cream-cones-with-chocolate_23-2148425392.jpg?t=st=1715845823~exp=1715849423~hmac=4ac745b54c1ef2fe8c758315577221e69339b6cc50da77ee06efeb0e22bf0a1d&w=740"
+  },
+  {
+    "id": 5,
+    "name": "Chicken Tandoori",
+    "price": "Rs.200",
+    "quantity": "Full Plate",
+    "category": "Non veg",
+    "like": "Best",
+    "image": "https://img.freepik.com/free-photo/closeup-shot-deliciously-prepared-chicken-served-with-onions-chili-sauce_181624-61705.jpg?t=st=1715277489~exp=1715281089~hmac=548250a149720485d32c49a3d8468fad05914c6deb3cc2da95fec5c086797eb7&w=740"
+  },
+  {
+    "id": 6,
+    "name": "Veg Burger",
+    "price": "Rs.55",
+    "quantity": "per piece",
+    "category": "Fast food",
+    "like": "",
+    "image": "https://img.freepik.com/free-photo/still-life-delicious-american-hamburger_23-2149637315.jpg?t=st=1715277661~exp=1715281261~hmac=24d0c275293dcb9a991cd50f89ef638d3eaec3742af42d4ac5453b9026923949&w=740"
+  },
+  {
+    "id": 7,
+    "name": "Veg Samosa",
+    "price": "Rs.20",
+    "quantity": "per Samosa",
+    "category": "Fast food",
+    "like": "Best",
+    "image": "https://img.freepik.com/premium-photo/close-up-serving-food-table_1048944-12763146.jpg?w=740"
+  },
+  {
+    "id": 8,
+    "name": "Shahi Paneer",
+    "price": "Rs.100",
+    "quantity": "Full Plate",
+    "category": "Veg food",
+    "like": "",
+    "image": "https://img.freepik.com/free-photo/bowl-food-with-spoon-plate-food-table_1340-23464.jpg?t=st=1715878503~exp=1715882103~hmac=71438156b6893c8a3acf7dcf3921142fcc6180035d39316da0f89974d427976a&w=740"
+  },
+  {
+    "id": 9,
+    "name": "Donut",
+    "price": "Rs.60",
+    "quantity": "per piece",
+    "category": "Desert",
+    "like": "Best",
+    "image": "https://img.freepik.com/free-photo/pink-chocolate-donuts-with-cream-walnut-crumbs-white-table_114579-18298.jpg?t=st=1715846148~exp=1715849748~hmac=7d6bec7c146e54c3b96fc2f8d7c508c934374a57e1e30f2aedda74c2470bff1d&w=740"
+  },
+  {
+    "id": 10,
+    "name": "Pizza",
+    "price": "Rs.200",
+    "quantity": "Medium Size",
+    "category": "Fast food",
+    "like": "",
+    "image": "https://img.freepik.com/free-photo/mixed-pizza-with-various-ingridients_140725-3790.jpg?t=st=1715878693~exp=1715882293~hmac=5e6b83ce292612088317c7e7b7d250fd19cba6ae67f1fe0d37ed3f881cb9dfd2&w=740"
+  },
+  {
+    "id": 11,
+    "name": "Spring Roll",
+    "price": "Rs.99",
+    "quantity": "Full Plate",
+    "category": "Fast food",
+    "like": "",
+    "image": "https://img.freepik.com/free-photo/fried-spring-rolls-cutting-board_1150-17010.jpg?t=st=1715878911~exp=1715882511~hmac=978e4dfe078344428b99b061760df1a403c68ab8fda7bb3802254bc907a5c092&w=740"
+  }
+]
