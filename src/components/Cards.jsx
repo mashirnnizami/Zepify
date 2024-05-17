@@ -9,9 +9,10 @@ function Cards({ item }) {
             <img src={item.image} alt={item.name} />
           </figure>
           <div className="card-body">
-            <h2 className="card-title">
+            <h2 className="card-title text-sm md:text-xl ">
               {item.name}
-              <div className="badge badge-warning">{item.category}</div>
+              
+              <div className="badge badge-warning ">{item.category}</div>
             </h2>
             <p></p>
             <p>{item.quantity}</p>
