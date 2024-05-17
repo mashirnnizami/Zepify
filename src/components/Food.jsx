@@ -44,9 +44,9 @@ function Food() {
   };
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-900 dark:text-white dark:border">
+      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-900 dark:text-white ">
         <div>
-          <h1 className="font-semibold text-xl pb-2 dark:bg-slate-900 dark:text-white dark:border">Best available dish </h1>
+          <h1 className="font-semibold text-xl pb-2 dark:bg-slate-900 ">Best available dish </h1>
           <p>Delicious and exciting food items starting at low cost</p>
         </div>
 
