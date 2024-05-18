@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import Login from './Login'
+import Login from './Login';
+import Contact from "./contact";
 
 function Navbar() {
 
@@ -41,7 +42,7 @@ function Navbar() {
         <a href="/course">Food Items</a>
       </li>
       <li>
-        <a>Contact</a>
+        <a href="/contact">Contact</a>
       </li>
       <li>
         <a>About</a>
@@ -57,13 +58,13 @@ function Navbar() {
             : ""
         }`}
       >
-        <div className="navbar ">
-          <div className="navbar-start">
-            <div className="dropdown">
+        <div className="navbar duration-200  ">
+          <div className="navbar-start dark:bg-slate-900 dark:text-white duration-200 ">
+            <div className="dropdown dark:bg-slate-900 dark:text-white duration-200 ">
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost lg:hidden"
+                className="btn btn-ghost lg:hidden dark:bg-slate-900 dark:text-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +83,7 @@ function Navbar() {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 dark:bg-slate-900 dark:text-white"
               >
                 {navItems}
               </ul>
