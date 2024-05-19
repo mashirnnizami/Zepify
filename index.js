@@ -1,9 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import bookRoute from './route/food.route.js'
 
+import foodRoute from './route/food.route.js'
+const PORT = 1456;
 const app = express();
+
 
 
 dotenv.config();
@@ -21,5 +23,9 @@ const URI=process.env.MongoDBURI;
         console.log("Error: ",error);
     }
 
-app.use("/food",bookRoute)
+app.use("/foods", foodRoute);
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
 
