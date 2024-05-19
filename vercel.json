@@ -6,7 +6,7 @@
   "builds": [
     {
       "src": "/(.*)",
-      "use": "@vercel/node"
+      "use": "/(.*)"
     }
   ]
 }
