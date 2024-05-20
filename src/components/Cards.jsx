@@ -17,7 +17,7 @@ function Cards({ item }) {
             <p></p>
             <p>{item.quantity}</p>
             <div className="card-actions justify-between">
-              <div className="badge badge-outline">{item.price}</div>
+              <div className="badge badge-outline">{`Rs ${item.price}`}</div>
               <div className="cursor-pointer px-2 py-1 rounded-full border-[2px] hover:bg-violet-500 hover:text-white duration-200">
                 Buy Now
               </div>
