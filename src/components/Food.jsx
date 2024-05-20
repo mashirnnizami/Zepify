@@ -1,13 +1,25 @@
-import React from "react";
+import React,{ useState,useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
-import list from "../../public/list.json";
+import axios from "axios";
 import Cards from "./Cards";
 
 function Food() {
-  const filterData = list.filter((data) => data.like === "Best");
+  const [food,setFood]=useState([])
+  useEffect(() => {
+    const getFood = async()=>{
+      try {
+      const res = await axios.get("https://87005145686.vercel.app/foods");
+      console.log(res.data)
+      setFood(res.data.filter((data) => data.like === "Best"));
+      } catch (error) {
+        console.log(error)
+      }
+    };
+    getFood();
+  },[]);
+
   var settings = {
     dots: true,
     infinite: false,
@@ -52,7 +64,7 @@ function Food() {
 
         <div>
           <Slider {...settings}>
-            {filterData.map((item) => (
+            {food.map((item) => (
               <Cards item={item} key={item.id} />
             ))}
           </Slider>
