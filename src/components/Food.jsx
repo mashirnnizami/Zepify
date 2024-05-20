@@ -61,7 +61,7 @@ function Food() {
         <div>
           <h1 className="font-semibold text-xl pb-2 dark:bg-slate-900 ">Best available dish </h1>
           <p>Delicious and exciting food items starting at low cost<br/></p>
-          <p>  -> Swipe right for available delicious dish -><br/></p>
+          <p>  ->Swipe here left -><br/></p>
         </div>
 
         <div>
