@@ -11,8 +11,9 @@ function Food() {
     const getFood = async()=>{
       try {
       const res = await axios.get("https://87005145686.vercel.app/foods");
-      console.log(res.data)
-      setFood(res.data.filter((data) => data.like === "Best"));
+      const data = res.data.filter((data) => data.like === "Best");
+      console.log(data);
+      setFood(data);
       } catch (error) {
         console.log(error)
       }
