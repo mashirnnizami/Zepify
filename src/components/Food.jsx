@@ -66,7 +66,7 @@ function Food() {
         <div>
           <Slider {...settings}>
             {food.map((item) => (
-              <Cards item={item} key={item.id} />
+              <Cards item={item} key={item._id} />
             ))}
           </Slider>
         </div>
