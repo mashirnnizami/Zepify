@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Cards from "./Cards";
-import list from "../../public/list.json";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 function Course() {
+  const [food,setFood]=useState([])
+  useEffect(() => {
+    const getFood = async()=>{
+      try {
+      const res = await axios.get("https://87005145686.vercel.app/foods");
+      console.log(res.data)
+      setFood(res.data)
+      } catch (error) {
+        console.log(error)
+      }
+    };
+    getFood();
+  },[]);
   return (
     <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
       <div className="mt-28 items-center justify-center text-center">
@@ -19,7 +32,7 @@ function Course() {
       </div>
 
       <div className="mt-12 grid grid-cols-1 md:grid-cols-3">
-        {list.map((item) => (
+        {food.map((item) => (
           <Cards key={item.id} item={item} />
         ))}
       </div>
