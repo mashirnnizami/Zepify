@@ -24,9 +24,11 @@ function Signup() {
         alert("Signup Successfully");
       }
     }).catch((err) => {
-      console.log(err);
-      alert("Error: " + err);
-    })
+      if(err.response){
+        console.log(err);
+        alert("Error: " + err.response.data.message);
+      }
+    });
   };
 
   return (
