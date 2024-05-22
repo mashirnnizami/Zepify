@@ -23,7 +23,8 @@ function Signup() {
       if(res.data){
         alert("Signup Successfully");
       }
-    }).catch((err) => {
+    })
+    .catch((err) => {
       if(err.response){
         console.log(err);
         alert("Error: " + err.response.data.message);
