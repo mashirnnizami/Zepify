@@ -31,6 +31,9 @@ function Contact() {
 
     if (responseData.success) {
       setResult("Form Submitted Successfully");
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000); // Adjust the delay as needed
     } else {
       console.log("Error", responseData);
       setResult(responseData.message);
@@ -57,9 +60,7 @@ function Contact() {
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Contact Us
           </h2>
-          <p className="mt-2 text-lg leading-8">
-            We are waiting for your inquiry
-          </p>
+          <p className="mt-2 text-lg leading-8">We are waiting for your inquiry</p>
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -68,7 +69,7 @@ function Contact() {
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
               <label
-                htmlFor="first-name"
+                htmlFor="firstName"
                 className="block text-sm font-semibold leading-6"
               >
                 First name
@@ -76,22 +77,22 @@ function Contact() {
               <div className="mt-2.5">
                 <input
                   type="text"
-                  name="first-name"
-                  id="first-name"
+                  name="firstName"
+                  id="firstName"
                   autoComplete="given-name"
-                  {...register("first-name")}
+                  {...register("firstName")}
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {errors["first-name"] && (
+                {errors.firstName && (
                   <p className="text-red-500 text-xs mt-1">
-                    {errors["first-name"].message}
+                    {errors.firstName.message}
                   </p>
                 )}
               </div>
             </div>
             <div>
               <label
-                htmlFor="last-name"
+                htmlFor="lastName"
                 className="block text-sm font-semibold leading-6"
               >
                 Last name
@@ -99,15 +100,15 @@ function Contact() {
               <div className="mt-2.5">
                 <input
                   type="text"
-                  name="last-name"
-                  id="last-name"
+                  name="lastName"
+                  id="lastName"
                   autoComplete="family-name"
-                  {...register("last-name")}
+                  {...register("lastName")}
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {errors["last-name"] && (
+                {errors.lastName && (
                   <p className="text-red-500 text-xs mt-1">
-                    {errors["last-name"].message}
+                    {errors.lastName.message}
                   </p>
                 )}
               </div>
@@ -137,7 +138,7 @@ function Contact() {
             </div>
             <div className="sm:col-span-2">
               <label
-                htmlFor="phone-number"
+                htmlFor="phoneNumber"
                 className="block text-sm font-semibold leading-6"
               >
                 Phone number
@@ -156,15 +157,15 @@ function Contact() {
                 </div>
                 <input
                   type="tel"
-                  name="phone-number"
-                  id="phone-number"
+                  name="phoneNumber"
+                  id="phoneNumber"
                   autoComplete="tel"
-                  {...register("phone-number")}
+                  {...register("phoneNumber")}
                   className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {errors["phone-number"] && (
+                {errors.phoneNumber && (
                   <p className="text-red-500 text-xs mt-1">
-                    {errors["phone-number"].message}
+                    {errors.phoneNumber.message}
                   </p>
                 )}
               </div>
@@ -223,9 +224,7 @@ function Contact() {
         </form>
         <div className="mx-auto max-w-2xl text-center mt-5">
           <p>{result}</p>
-          window.location.reload();
         </div>
-        window.location.reload();
       </div>
       <Footer />
     </>
