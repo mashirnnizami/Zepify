@@ -1,23 +1,27 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Login from './Login';
+import Logout from "./Logout";
 import Contact from "./contact";
+import { useAuth } from "../context/AuthProvider";
 
 function Navbar() {
 
-  const [theme,setTheme]=useState(localStorage.getItem("theme")?localStorage.getItem("theme"): "light")
-  const element=document.documentElement;
-  useEffect(()=>{
-    if(theme==="dark"){
+  const [authUser, setAuthUser] = useAuth()
+
+  const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
+  const element = document.documentElement;
+  useEffect(() => {
+    if (theme === "dark") {
       element.classList.add("dark");
-      localStorage.setItem("theme","dark")
+      localStorage.setItem("theme", "dark")
       document.body.classList.add("dark");
-    }else{
+    } else {
       element.classList.remove("dark")
-      localStorage.setItem("theme","light");
+      localStorage.setItem("theme", "light");
       document.body.classList.remove("dark");
     }
-  },[theme])
+  }, [theme])
 
   const [sticky, setSticky] = useState(false);
   useEffect(() => {
@@ -52,11 +56,10 @@ function Navbar() {
   return (
     <>
       <div
-        className={` max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-900 dark:text-white fixed top-0 left-0 right-0 z-50 ${
-          sticky
-            ? "sticky-navbar shadow-md bg-base-200 dark:bg-slate-900 dark:text-white duration-300 transition-all ease-in-out"
-            : ""
-        }`}
+        className={` max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-900 dark:text-white fixed top-0 left-0 right-0 z-50 ${sticky
+          ? "sticky-navbar shadow-md bg-base-200 dark:bg-slate-900 dark:text-white duration-300 transition-all ease-in-out"
+          : ""
+          }`}
       >
         <div className="navbar duration-200  ">
           <div className="navbar-start dark:bg-slate-900 dark:text-white duration-200 ">
@@ -144,12 +147,18 @@ function Navbar() {
               </svg>
             </label>
 
-            <div className="">
-              <a className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer" onClick={()=>document.getElementById("my_modal_3").showModal()}>
-                Login
-              </a>
-              <Login/>
-            </div>
+            {
+              authUser ? <Logout /> :
+
+
+                <div className="">
+                  <a className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer" onClick=
+                    {() => document.getElementById("my_modal_3").showModal()}>
+                    Login
+                  </a>
+                  <Login />
+                </div>
+            }
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 function Login() {
   const {
@@ -11,24 +12,33 @@ function Login() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    const userInfo={
-      email:data.email,
-      password:data.password,
-    }
-    await axios.post("https://87005145686.vercel.app/user/login",userInfo)
-    .then((res)=>{
-      console.log(res.data);
-      if(res.data){
-        alert("LoggedIn Successfully");
-      }
-      localStorage.setItem("Users",JSON.stringify(res.data.user));
-    })
-    .catch((err) => {
-      if(err.response){
-        console.log(err);
-        alert("Error: " + err.response.data.message);
-      }
-    });
+    const userInfo = {
+      email: data.email,
+      password: data.password,
+    };
+    await axios.post("https://87005145686.vercel.app/user/login", userInfo)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data) {
+
+          toast.success('LoggedIn Successfully');
+          document.getElementById("my_modal_3").close();
+          setTimeout(() => {
+            
+            window.location.reload();
+            localStorage.setItem("Users", JSON.stringify(res.data.user));
+          }, 1000);
+
+        }
+
+      })
+      .catch((err) => {
+        if (err.response) {
+          console.log(err);
+          toast.error("Error: " + err.response.data.message);
+          setTimeout(() => { }, 2000);
+        }
+      });
   }
   return (
     <div>
@@ -53,19 +63,19 @@ function Login() {
                 className="w-60 px-3 py-1 border rounded-md outline-none md:w-80 px-3 py-1 border rounded-md outline-none"
                 {...register("email", { required: true })}
               />
-              <br/>
+              <br />
               {errors.email && <span className="text-sm text-red-500">This field is required</span>}
             </div>
             <div className="mt-4 space-y-2">
               <span>Password</span>
               <br />
               <input
-                type="text"
+                type="password"
                 placeholder="Enter your password"
                 className="w-60 px-3 py-1 border rounded-md outline-none md:w-80 px-3 py-1 border rounded-md outline-none"
                 {...register("password", { required: true })}
               />
-              <br/>
+              <br />
               {errors.password && <span className="text-sm text-red-500">This field is required</span>}
             </div>
             <div className="flex justify-around mt-4">
