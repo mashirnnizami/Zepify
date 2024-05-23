@@ -223,7 +223,9 @@ function Contact() {
         </form>
         <div className="mx-auto max-w-2xl text-center mt-5">
           <p>{result}</p>
+          window.location.reload();
         </div>
+        window.location.reload();
       </div>
       <Footer />
     </>
