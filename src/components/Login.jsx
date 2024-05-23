@@ -19,7 +19,7 @@ function Login() {
     .then((res)=>{
       console.log(res.data);
       if(res.data){
-        alert("Signup Successfully");
+        alert("LoggedIn Successfully");
       }
       localStorage.setItem("Users",JSON.stringify(res.data.user));
     })
