@@ -29,6 +29,7 @@ function Signup() {
         navigate(from,{replace:true});
       }
       localStorage.setItem("Users",JSON.stringify(res.data.user));
+      window.location.reload();
     })
     .catch((err) => {
       if(err.response){
@@ -111,6 +112,7 @@ function Signup() {
                   className="underline text-blue-500 cursor-pointer"
                     onClick={() =>
                       document.getElementById("my_modal_3").showModal()
+                      
                     }
                   >
                     Login
