@@ -23,7 +23,7 @@ function Signup() {
       if(res.data){
         alert("Signup Successfully");
       }
-      localStorage.setItem("Users",JSON.stringify(res.data));
+      localStorage.setItem("Users",JSON.stringify(res.data.user));
     })
     .catch((err) => {
       if(err.response){
