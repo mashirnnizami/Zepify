@@ -1,4 +1,4 @@
-import React,{ useState,useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -6,20 +6,26 @@ import axios from "axios";
 import Cards from "./Cards";
 
 function Food() {
-  const [food,setFood]=useState([])
+  const [food, setFood] = useState([]);
+  const sliderRef = useRef(null);
+
   useEffect(() => {
-    const getFood = async()=>{
+    const getFood = async () => {
       try {
-      const res = await axios.get("https://87005145686.vercel.app/foods");
-      const data = res.data.filter((data) => data.like === "Best");
-      console.log(data);
-      setFood(data);
+        const res = await axios.get("https://87005145686.vercel.app/foods");
+        const data = res.data.filter((data) => data.like === "Best");
+        console.log(data);
+        setFood(data);
+        // Force update the slider
+        if (sliderRef.current) {
+          sliderRef.current.slickGoTo(0);
+        }
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     };
     getFood();
-  },[]);
+  }, []);
 
   var settings = {
     dots: true,
@@ -55,21 +61,25 @@ function Food() {
       },
     ],
   };
+
   return (
     <>
       <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-900 dark:text-white ">
         <div>
           <h1 className="font-semibold text-xl pb-2 dark:bg-slate-900 ">Best available dish </h1>
           <p>Delicious and exciting food items starting at low cost<br/></p>
-          <p>  ->Swipe here left -><br/></p>
         </div>
 
         <div>
-          <Slider {...settings}>
-            {food.map((item) => (
-              <Cards item={item} key={item._id} />
-            ))}
-          </Slider>
+          {food.length > 0 ? (
+            <Slider ref={sliderRef} {...settings}>
+              {food.map((item) => (
+                <Cards item={item} key={item._id} />
+              ))}
+            </Slider>
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
       </div>
     </>
