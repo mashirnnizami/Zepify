@@ -42,7 +42,7 @@ function Banner() {
             <h1 className="text-4xl font-bold">
               Hello, welcome here to Zepify to order <span className='text-violet-500'>exciting food!!!</span>
             </h1>
-            <p className='text-xl'>Here you will get delicious and fresh food items at discounted rates<br />
+            <p className='text-xl'>Here you will get delicious and fresh food items at the discounted rates<br />
               *No tax apply
             </p>
             <form onSubmit={handleSubmit(onSubmit)}>
