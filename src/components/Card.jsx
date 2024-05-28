@@ -25,5 +25,4 @@ function Cards({ item }) {
     </div>
   );
 }
-
 export default Cards;
